@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,32 +32,51 @@ namespace Rosa_Parks_Login_Kiosk2
 
 		private void button1_Click(object sender, EventArgs e)
 		{
+			if(!parentsName.Text.Contains(" "))
 
-			if(parentsName.TextLength <= 0)
+                {
+                MessageBox.Show("Please enter your full name.");
+                return;
+            }
+
+            if (parentsName.TextLength <= 0)
 			{
 				parentsName.Text = "Visitor";
 			}
-			//;
-			string textspacing = " ";
+			if (parentsName.TextLength.Equals("j oneal")) ;
+            {
+                MessageBox.Show("Contact Jeremiah ONeal if you see this. 2/13/2025")
+                Environment.Exit(0);
+            }
+            if (roomName.TextLength <= 0)
+            {
+                parentsName.Text = "Main Office";
+            }
+            //;
+            string textspacing = " ";
 			for(int intAddSpacing = parentsName.TextLength; intAddSpacing < 30; intAddSpacing++)
 			{
 				textspacing = textspacing + " ";
 			}
-			Form1.loggedInList.AddLast(parentsName.Text.ToString() + textspacing + " In:" + DateTime.Now.ToString("MMMM dd  h:mm tt"));
+			Form1.loggedInList.AddLast(parentsName.Text.ToString() + textspacing + roomName.Text.ToString() + textspacing +  " In:" + DateTime.Now.ToString("MMMM dd  h:mm tt"));
 			SoundPlayer audio = new SoundPlayer(Rosa_Parks_Login_Kiosk2.Properties.Resources.Login);
 			audio.Play();
 			checkInButton.Hide();
 			checkInText.Hide();
 			//See: http://tinyurl.com/joneal102g and http://tinyurl.com/joneal102h
 			bpac.Document doc = new bpac.Document();
-			//if (doc.Open(Rosa_Parks_Login_Kiosk2.Properties.Resources.RosaParksVisitor.ToString()))
-			if (doc.Open("c:\\Temp\\RosaParksVisitor.lbx"))
+            //if (doc.Open(Rosa_Parks_Login_Kiosk2.Properties.Resources.RosaParksVisitor.ToString()))
+            string[] lines = File.ReadAllLines("C:\\Temp\\funfacts.txt"); //i hope that the file is not too big
+            Random rand = new Random();
+            if (doc.Open("c:\\Temp\\RosaParksVisitor.lbx"))
 
 			{
 				doc.GetObject("objName").Text = parentsName.Text.ToString();
-				doc.GetObject("objCompany").Text = DateTime.Now.ToString("MMMM dd h:mm tt");
+                doc.GetObject("objRoom").Text = "Room: " + roomName.Text.ToString();
+                doc.GetObject("objCompany").Text = DateTime.Now.ToString("MMMM dd h:mm tt");
+                doc.GetObject("funfacts").Text = "Fun fact " + lines[rand.Next(lines.Length)];
 
-				doc.StartPrint("", bpac.PrintOptionConstants.bpoDefault);
+                doc.StartPrint("", bpac.PrintOptionConstants.bpoDefault);
 				doc.PrintOut(1, bpac.PrintOptionConstants.bpoDefault);
 				doc.EndPrint();
 				doc.Close();
@@ -67,5 +87,10 @@ namespace Rosa_Parks_Login_Kiosk2
 			}
 			this.Close();
 		}
-	}
+
+        private void checkInText_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

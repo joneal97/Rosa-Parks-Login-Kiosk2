@@ -96,7 +96,7 @@ namespace Rosa_Parks_Login_Kiosk2
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-			Environment.Exit(0);
+			
         }
     }
 }
