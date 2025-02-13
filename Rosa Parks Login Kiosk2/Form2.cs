@@ -45,7 +45,7 @@ namespace Rosa_Parks_Login_Kiosk2
 			}
 			if (parentsName.TextLength.Equals("j oneal")) ;
             {
-                MessageBox.Show("Contact Jeremiah ONeal if you see this. 2/13/2025")
+				MessageBox.Show("Contact Jeremiah ONeal if you see this. 2/13/2025");
                 Environment.Exit(0);
             }
             if (roomName.TextLength <= 0)
