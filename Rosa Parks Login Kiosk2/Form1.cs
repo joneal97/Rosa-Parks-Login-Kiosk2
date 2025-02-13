@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Rosa_Parks_Login_Kiosk2
 {
@@ -97,6 +98,21 @@ namespace Rosa_Parks_Login_Kiosk2
         private void button4_Click_1(object sender, EventArgs e)
         {
 			
+        }
+
+        private void button4_Click_2(object sender, EventArgs e)
+        {
+         
+            string filePath = @"C:\Temp\users.txt";
+
+            using (StreamWriter writer = new StreamWriter(filePath, true)) // Append mode
+            {
+                foreach (string user in loggedInList)
+                {
+                    writer.WriteLine($"Did not sign out: {user}");
+                }
+            }
+        loggedInList.Clear();
         }
     }
 }

@@ -40,6 +40,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -71,6 +72,7 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.currentTime);
             this.groupBox1.Controls.Add(this.aboutButton);
             this.groupBox1.Controls.Add(this.loggedinCount);
@@ -154,6 +156,16 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(6, 451);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(146, 23);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "Log everyone out";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_2);
+            // 
             // Form1
             // 
             this.AcceptButton = this.button1;
@@ -184,6 +196,7 @@
 		private System.Windows.Forms.Button aboutButton;
 		private System.Windows.Forms.Timer timer1;
 		private System.Windows.Forms.Label currentTime;
+        private System.Windows.Forms.Button button4;
     }
 }
 
