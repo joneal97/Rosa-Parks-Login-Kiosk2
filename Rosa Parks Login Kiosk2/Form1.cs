@@ -93,5 +93,10 @@ namespace Rosa_Parks_Login_Kiosk2
 		{
 			currentTime.Text = DateTime.Now.ToString("MMMM dd h:mm:ss tt");
 		}
-	}
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+			Environment.Exit(0);
+        }
+    }
 }
