@@ -34,7 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.updateBox = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.logEveryoneOut = new System.Windows.Forms.Button();
             this.currentTime = new System.Windows.Forms.Label();
             this.aboutButton = new System.Windows.Forms.Button();
             this.loggedinCount = new System.Windows.Forms.Label();
@@ -42,6 +42,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.testRemoveJONeal = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -75,8 +76,9 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.testRemoveJONeal);
             this.groupBox1.Controls.Add(this.updateBox);
-            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.logEveryoneOut);
             this.groupBox1.Controls.Add(this.currentTime);
             this.groupBox1.Controls.Add(this.aboutButton);
             this.groupBox1.Controls.Add(this.loggedinCount);
@@ -93,7 +95,6 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kiosk";
-            //this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // updateBox
             // 
@@ -104,16 +105,16 @@
             this.updateBox.TabIndex = 8;
             this.updateBox.Text = resources.GetString("updateBox.Text");
             // 
-            // button4
+            // logEveryoneOut
             // 
-            this.button4.Location = new System.Drawing.Point(22, 644);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(219, 35);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Manually log everyone out";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click_2);
+            this.logEveryoneOut.Location = new System.Drawing.Point(22, 644);
+            this.logEveryoneOut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.logEveryoneOut.Name = "logEveryoneOut";
+            this.logEveryoneOut.Size = new System.Drawing.Size(219, 35);
+            this.logEveryoneOut.TabIndex = 7;
+            this.logEveryoneOut.Text = "Manually log everyone out";
+            this.logEveryoneOut.UseVisualStyleBackColor = true;
+            this.logEveryoneOut.Click += new System.EventHandler(this.button4_Click_2);
             // 
             // currentTime
             // 
@@ -188,6 +189,15 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // testRemoveJONeal
+            // 
+            this.testRemoveJONeal.AutoSize = true;
+            this.testRemoveJONeal.Location = new System.Drawing.Point(981, 781);
+            this.testRemoveJONeal.Name = "testRemoveJONeal";
+            this.testRemoveJONeal.Size = new System.Drawing.Size(167, 20);
+            this.testRemoveJONeal.TabIndex = 9;
+            this.testRemoveJONeal.Text = "Please ignore this box.";
+            // 
             // Form1
             // 
             this.AcceptButton = this.button1;
@@ -219,8 +229,9 @@
 		private System.Windows.Forms.Button aboutButton;
 		private System.Windows.Forms.Timer timer1;
 		private System.Windows.Forms.Label currentTime;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button logEveryoneOut;
         private System.Windows.Forms.Label updateBox;
+        private System.Windows.Forms.Label testRemoveJONeal;
     }
 }
 

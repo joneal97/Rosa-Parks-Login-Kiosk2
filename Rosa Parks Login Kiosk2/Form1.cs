@@ -12,9 +12,11 @@ using System.IO;
 
 namespace Rosa_Parks_Login_Kiosk2
 {
-	public partial class Form1 : Form
+
+    public partial class Form1 : Form
 	{
-		public static LinkedList<String> loggedInList; //See http://tinyurl.com/joneal102b
+        private int countUp = 0;
+        public static LinkedList<String> loggedInList; //See http://tinyurl.com/joneal102b
 		public Form1()
 		{
 			loggedInList = new LinkedList<String>();
@@ -26,10 +28,28 @@ namespace Rosa_Parks_Login_Kiosk2
 			//See http://tinyurl.com/joneal106b
 			var parameterDate = DateTime.ParseExact("02/28/2025", "MM/dd/yyyy", CultureInfo.InvariantCulture);
 			var todaysDate = DateTime.Today;
+			if (todaysDate.Hour == 3 && todaysDate.Minute == 0 && todaysDate.Second == 0)
+			{
+                countUp++;
+                testRemoveJONeal.Text = countUp.ToString();
+                string filePath = @"C:\Temp\users.txt";
 
-			if (parameterDate < todaysDate)
+                using (StreamWriter writer = new StreamWriter(filePath, true)) // Append mode
+                {
+                    foreach (string user in loggedInList)
+                    {
+                        writer.WriteLine($"Did not sign out: {user}");
+                    }
+                }
+                loggedInList.Clear();
+
+            }
+
+                if (parameterDate < todaysDate)
 			{
 				updateBox.Hide();
+				logEveryoneOut.Hide();
+
 			}
 			//See http://tinyurl.com/joneal101a
 			this.Top = 0;
