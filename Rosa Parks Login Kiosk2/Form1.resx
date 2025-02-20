@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="updateBox.Text" xml:space="preserve">
-    <value>Update: Improved check-out feature to retain logged-in and logged-out users when app suddenly closes. Implemented robust security measures 
-into app leveraging educational knowledge. Added update box (this box)  which will address improvements made and remove text from message 
-box when information is out-of-date to reduce clutter on  sign-in page. Please contact Jeremiah O'Neal, M.S. Cybersecurity @ NU with questions 
-related to this station. (2/24/2025).</value>
-  </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

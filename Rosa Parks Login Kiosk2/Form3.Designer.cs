@@ -33,7 +33,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.loggedinGuest = new System.Windows.Forms.DataGridView();
             this.Visitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.printReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.loggedinGuest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,24 +86,12 @@
             this.Visitor.ReadOnly = true;
             this.Visitor.Width = 600;
             // 
-            // printReport
-            // 
-            this.printReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.printReport.Location = new System.Drawing.Point(112, 598);
-            this.printReport.Name = "printReport";
-            this.printReport.Size = new System.Drawing.Size(242, 71);
-            this.printReport.TabIndex = 4;
-            this.printReport.Text = "Print Report";
-            this.printReport.UseVisualStyleBackColor = true;
-            this.printReport.Click += new System.EventHandler(this.printReport_Click);
-            // 
             // Form3
             // 
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
-            this.Controls.Add(this.printReport);
             this.Controls.Add(this.loggedinGuest);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -125,6 +112,5 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.DataGridView loggedinGuest;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Visitor;
-        private System.Windows.Forms.Button printReport;
     }
 }

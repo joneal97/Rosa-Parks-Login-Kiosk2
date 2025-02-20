@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Drawing.Printing;
 
 
 using System.Media;
@@ -36,7 +37,8 @@ namespace Rosa_Parks_Login_Kiosk2
 			{
 				createText = loggedinGuest.SelectedCells[0].Value.ToString() + "... Out " + DateTime.Now.ToString("MMMM dd h:mm tt"); //see http://tinyurl.com/joneal103a
 				Form1.loggedInList.Remove(loggedinGuest.SelectedCells[0].Value.ToString());
-				File.AppendAllText("c:\\Temp\\users.txt", createText + Environment.NewLine);
+				Form1.loggedOutList.AddLast(loggedinGuest.SelectedCells[0].Value.ToString() + " Out:" + DateTime.Now.ToString("MMMM dd  h:mm tt"));
+                File.AppendAllText("c:\\Temp\\users.txt", createText + Environment.NewLine);
 				logoutswitch = 1;
 			}
 			if (logoutswitch == 1)
@@ -61,64 +63,7 @@ namespace Rosa_Parks_Login_Kiosk2
 			
 		}
 
-        private void printReport_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show(
-           "Are you sure you want to print this report?",
-           "Confirm Print",
-           MessageBoxButtons.YesNo,
-           MessageBoxIcon.Question);
-
-            // Handle the result
-            if (result == DialogResult.Yes)
-            {
-                Console.WriteLine("User selected Yes. Proceed with printing.");
-                
-                //{
-                  //  writer.WriteLine($"Did not sign out: {user}");
-                //}
-                // Create a PrintDocument object
-                PrintDocument printDoc = new PrintDocument();
-
-                // Set the printer name to the installed printer you want to use
-                printDoc.PrinterSettings.PrinterName = "0230A-TechHall-HP2055";
-
-                // Check if the specified printer exists
-                if (printDoc.PrinterSettings.IsValid)
-                {
-                    // Handle the PrintPage event
-                    printDoc.PrintPage += (sender, e) =>
-                    {
-                        // Starting position for the printed text
-                        float yPos = 100; // Starting position on the page
-                        float leftMargin = e.MarginBounds.Left;
-                        Font printFont = new Font("Arial", 12);
-
-                        // Loop through the logged-in users and print them
-                        foreach (string user in loggedInList)
-                        {
-                            e.Graphics.DrawString(user, printFont, Brushes.Black, leftMargin, yPos);
-                            yPos += printFont.GetHeight(e.Graphics); // Move to the next line
-                        }
-                    };
-
-                    // Print the document
-                    printDoc.Print();
-                }
-                else
-                {
-                    Console.WriteLine("The specified printer is not available.");
-                }
-            }// End of printing section
-
-        }
-            else
-            {
-                Console.WriteLine("User selected No. Cancel the printing.");
-                // Add code here to cancel the printing process
-            }
-        }
-
+        
         //private void loggedinList_SelectedIndexChanged(object sender, EventArgs e)
         //{
 

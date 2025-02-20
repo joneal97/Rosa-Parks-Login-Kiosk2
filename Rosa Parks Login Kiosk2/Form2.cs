@@ -59,7 +59,9 @@ namespace Rosa_Parks_Login_Kiosk2
 				textspacing = textspacing + " ";
 			}
 			Form1.loggedInList.AddLast(parentsName.Text.ToString() + textspacing + roomName.Text.ToString() + textspacing +  " In:" + DateTime.Now.ToString("MMMM dd  h:mm tt"));
-			SoundPlayer audio = new SoundPlayer(Rosa_Parks_Login_Kiosk2.Properties.Resources.Login);
+            
+
+            SoundPlayer audio = new SoundPlayer(Rosa_Parks_Login_Kiosk2.Properties.Resources.Login);
 			audio.Play();
 			checkInButton.Hide();
 			checkInText.Hide();

@@ -33,6 +33,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.printLoggedInUsers = new System.Windows.Forms.Button();
+            this.testRemoveJONeal = new System.Windows.Forms.Label();
             this.updateBox = new System.Windows.Forms.Label();
             this.logEveryoneOut = new System.Windows.Forms.Button();
             this.currentTime = new System.Windows.Forms.Label();
@@ -42,7 +44,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.testRemoveJONeal = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -76,6 +77,7 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.printLoggedInUsers);
             this.groupBox1.Controls.Add(this.testRemoveJONeal);
             this.groupBox1.Controls.Add(this.updateBox);
             this.groupBox1.Controls.Add(this.logEveryoneOut);
@@ -96,18 +98,38 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kiosk";
             // 
+            // printLoggedInUsers
+            // 
+            this.printLoggedInUsers.Location = new System.Drawing.Point(7, 725);
+            this.printLoggedInUsers.Name = "printLoggedInUsers";
+            this.printLoggedInUsers.Size = new System.Drawing.Size(189, 30);
+            this.printLoggedInUsers.TabIndex = 10;
+            this.printLoggedInUsers.Text = "Print logged in users";
+            this.printLoggedInUsers.UseVisualStyleBackColor = true;
+            this.printLoggedInUsers.Click += new System.EventHandler(this.printLoggedInUsers_Click);
+            // 
+            // testRemoveJONeal
+            // 
+            this.testRemoveJONeal.AutoSize = true;
+            this.testRemoveJONeal.Location = new System.Drawing.Point(1117, 767);
+            this.testRemoveJONeal.Name = "testRemoveJONeal";
+            this.testRemoveJONeal.Size = new System.Drawing.Size(125, 20);
+            this.testRemoveJONeal.TabIndex = 9;
+            this.testRemoveJONeal.Text = "Goes up at 3AM";
+            // 
             // updateBox
             // 
             this.updateBox.AutoSize = true;
-            this.updateBox.Location = new System.Drawing.Point(7, 701);
+            this.updateBox.Location = new System.Drawing.Point(18, 767);
             this.updateBox.Name = "updateBox";
-            this.updateBox.Size = new System.Drawing.Size(1025, 80);
+            this.updateBox.Size = new System.Drawing.Size(650, 20);
             this.updateBox.TabIndex = 8;
-            this.updateBox.Text = resources.GetString("updateBox.Text");
+            this.updateBox.Text = "Update 2/20/2025: Improved login-logout functionality and adding report printing " +
+    "to the app.";
             // 
             // logEveryoneOut
             // 
-            this.logEveryoneOut.Location = new System.Drawing.Point(22, 644);
+            this.logEveryoneOut.Location = new System.Drawing.Point(203, 723);
             this.logEveryoneOut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.logEveryoneOut.Name = "logEveryoneOut";
             this.logEveryoneOut.Size = new System.Drawing.Size(219, 35);
@@ -189,15 +211,6 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // testRemoveJONeal
-            // 
-            this.testRemoveJONeal.AutoSize = true;
-            this.testRemoveJONeal.Location = new System.Drawing.Point(981, 781);
-            this.testRemoveJONeal.Name = "testRemoveJONeal";
-            this.testRemoveJONeal.Size = new System.Drawing.Size(167, 20);
-            this.testRemoveJONeal.TabIndex = 9;
-            this.testRemoveJONeal.Text = "Please ignore this box.";
-            // 
             // Form1
             // 
             this.AcceptButton = this.button1;
@@ -232,6 +245,7 @@
         private System.Windows.Forms.Button logEveryoneOut;
         private System.Windows.Forms.Label updateBox;
         private System.Windows.Forms.Label testRemoveJONeal;
+        private System.Windows.Forms.Button printLoggedInUsers;
     }
 }
 
