@@ -33,6 +33,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.updateBox = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.currentTime = new System.Windows.Forms.Label();
             this.aboutButton = new System.Windows.Forms.Button();
@@ -74,6 +75,7 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.updateBox);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.currentTime);
             this.groupBox1.Controls.Add(this.aboutButton);
@@ -91,16 +93,25 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kiosk";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            //this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // updateBox
+            // 
+            this.updateBox.AutoSize = true;
+            this.updateBox.Location = new System.Drawing.Point(7, 701);
+            this.updateBox.Name = "updateBox";
+            this.updateBox.Size = new System.Drawing.Size(1025, 80);
+            this.updateBox.TabIndex = 8;
+            this.updateBox.Text = resources.GetString("updateBox.Text");
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(84, 709);
+            this.button4.Location = new System.Drawing.Point(22, 644);
             this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(219, 35);
             this.button4.TabIndex = 7;
-            this.button4.Text = "Log everyone out";
+            this.button4.Text = "Manually log everyone out";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click_2);
             // 
@@ -209,6 +220,7 @@
 		private System.Windows.Forms.Timer timer1;
 		private System.Windows.Forms.Label currentTime;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label updateBox;
     }
 }
 

@@ -24,12 +24,12 @@ namespace Rosa_Parks_Login_Kiosk2
 		private void Form1_Load(object sender, EventArgs e)
 		{
 			//See http://tinyurl.com/joneal106b
-			var parameterDate = DateTime.ParseExact("11/28/2019", "MM/dd/yyyy", CultureInfo.InvariantCulture);
+			var parameterDate = DateTime.ParseExact("02/28/2025", "MM/dd/yyyy", CultureInfo.InvariantCulture);
 			var todaysDate = DateTime.Today;
 
-			if (parameterDate > todaysDate)
+			if (parameterDate < todaysDate)
 			{
-				aboutButton.Hide();
+				updateBox.Hide();
 			}
 			//See http://tinyurl.com/joneal101a
 			this.Top = 0;
@@ -63,10 +63,6 @@ namespace Rosa_Parks_Login_Kiosk2
 			loggedinCount.Text = "There are " + Form1.loggedInList.Count + " logged in visitors";
 		}
 
-		private void groupBox1_Enter(object sender, EventArgs e)
-		{
-
-		}
 
 		private void pictureBox1_Click(object sender, EventArgs e)
 		{
@@ -114,5 +110,6 @@ namespace Rosa_Parks_Login_Kiosk2
             }
         loggedInList.Clear();
         }
+
     }
 }
