@@ -117,19 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="richTextBox1.Text" xml:space="preserve">
-    <value>Rosa Parks Login Kiosk 2.00 (Feb 20, 2025)
-Rosa Parks Login Kiosk was developed in house
-from the ground up using the programming lanuage C-Sharp.
-
-Jeremiah O'Neal holds a Masters of Science degree in Cybersecurity
-which he obtained in Nov, 2023. He is an expert computer programmer
-and he is a security expert. All parts of this program were developed
-with the highest level of security in mind.
-
-Jeremiah O'Neal is located at this site and he works here M-Th from 8AM
-to 2:30PM.</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
