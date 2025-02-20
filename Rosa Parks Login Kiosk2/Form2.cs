@@ -68,7 +68,11 @@ namespace Rosa_Parks_Login_Kiosk2
             //if (doc.Open(Rosa_Parks_Login_Kiosk2.Properties.Resources.RosaParksVisitor.ToString()))
             string[] lines = File.ReadAllLines("C:\\Temp\\funfacts.txt"); //i hope that the file is not too big
             Random rand = new Random();
-            if (doc.Open("c:\\Temp\\RosaParksVisitor.lbx"))
+			bool testingApp = false; //Switch this to true if you are testing the app.
+			if(printLabel.Checked == true)
+			{ 
+				if(testingApp == false) { 
+			if (doc.Open("c:\\Temp\\RosaParksVisitor.lbx"))
 
 			{
 				doc.GetObject("objName").Text = parentsName.Text.ToString();
@@ -87,6 +91,8 @@ namespace Rosa_Parks_Login_Kiosk2
 			}
 			this.Close();
 		}
+        }
+        }
 
         private void checkInText_Click(object sender, EventArgs e)
         {

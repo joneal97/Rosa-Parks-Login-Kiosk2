@@ -35,7 +35,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.roomName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.printLabel = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,17 +102,17 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Enter destination or room#";
             // 
-            // checkBox1
+            // printLabel
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(85, 387);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(104, 24);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "Print label";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.printLabel.AutoSize = true;
+            this.printLabel.Checked = true;
+            this.printLabel.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.printLabel.Location = new System.Drawing.Point(85, 387);
+            this.printLabel.Name = "printLabel";
+            this.printLabel.Size = new System.Drawing.Size(104, 24);
+            this.printLabel.TabIndex = 6;
+            this.printLabel.Text = "Print label";
+            this.printLabel.UseVisualStyleBackColor = true;
             // 
             // Form2
             // 
@@ -120,7 +120,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 491);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.printLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.roomName);
             this.Controls.Add(this.pictureBox1);
@@ -146,6 +146,6 @@
 		private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox roomName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox printLabel;
     }
 }
