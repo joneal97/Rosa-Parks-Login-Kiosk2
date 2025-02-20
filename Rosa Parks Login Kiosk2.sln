@@ -17,8 +17,8 @@ Global
 		{B0C6F90E-8CEA-4BDC-9A3B-67C90B7F8D41}.Debug|Compile in 64bit only ONEAL!.Build.0 = Debug|Any CPU
 		{B0C6F90E-8CEA-4BDC-9A3B-67C90B7F8D41}.Debug|x64.ActiveCfg = Release|x64
 		{B0C6F90E-8CEA-4BDC-9A3B-67C90B7F8D41}.Debug|x64.Build.0 = Release|x64
-		{B0C6F90E-8CEA-4BDC-9A3B-67C90B7F8D41}.ONEAL-Use-This|Compile in 64bit only ONEAL!.ActiveCfg = Release|Any CPU
-		{B0C6F90E-8CEA-4BDC-9A3B-67C90B7F8D41}.ONEAL-Use-This|Compile in 64bit only ONEAL!.Build.0 = Release|Any CPU
+		{B0C6F90E-8CEA-4BDC-9A3B-67C90B7F8D41}.ONEAL-Use-This|Compile in 64bit only ONEAL!.ActiveCfg = Release|x64
+		{B0C6F90E-8CEA-4BDC-9A3B-67C90B7F8D41}.ONEAL-Use-This|Compile in 64bit only ONEAL!.Build.0 = Release|x64
 		{B0C6F90E-8CEA-4BDC-9A3B-67C90B7F8D41}.ONEAL-Use-This|x64.ActiveCfg = Release|x64
 		{B0C6F90E-8CEA-4BDC-9A3B-67C90B7F8D41}.ONEAL-Use-This|x64.Build.0 = Release|x64
 	EndGlobalSection
