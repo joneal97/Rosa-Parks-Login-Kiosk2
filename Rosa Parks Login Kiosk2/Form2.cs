@@ -72,26 +72,27 @@ namespace Rosa_Parks_Login_Kiosk2
 			if(printLabel.Checked == true)
 			{ 
 				if(testingApp == false) { 
-			if (doc.Open("c:\\Temp\\RosaParksVisitor.lbx"))
+				if (doc.Open("c:\\Temp\\RosaParksVisitor.lbx"))
 
-			{
-				doc.GetObject("objName").Text = parentsName.Text.ToString();
-                doc.GetObject("objRoom").Text = "Room: " + roomName.Text.ToString();
-                doc.GetObject("objCompany").Text = DateTime.Now.ToString("MMMM dd h:mm tt");
-                doc.GetObject("funfacts").Text = "Fun fact " + lines[rand.Next(lines.Length)];
+				{
+					doc.GetObject("objName").Text = parentsName.Text.ToString();
+					doc.GetObject("objRoom").Text = "Room: " + roomName.Text.ToString();
+					doc.GetObject("objCompany").Text = DateTime.Now.ToString("MMMM dd h:mm tt");
+					doc.GetObject("funfacts").Text = "Fun fact " + lines[rand.Next(lines.Length)];
 
-                doc.StartPrint("", bpac.PrintOptionConstants.bpoDefault);
-				doc.PrintOut(1, bpac.PrintOptionConstants.bpoDefault);
-				doc.EndPrint();
-				doc.Close();
+					doc.StartPrint("", bpac.PrintOptionConstants.bpoDefault);
+					doc.PrintOut(1, bpac.PrintOptionConstants.bpoDefault);
+					doc.EndPrint();
+					doc.Close();
+				}
+				else
+				{
+					MessageBox.Show("Missing c:\\Temp\\RosaParksVisitor.lbx Contact\nJeremiah ONeal at Ext 3038.");
+				}
+				
 			}
-			else
-			{
-				MessageBox.Show("Missing c:\\Temp\\RosaParksVisitor.lbx Contact\nJeremiah ONeal at Ext 3038.");
-			}
-			this.Close();
-		}
-        }
+                this.Close();
+            }
         }
 
         private void checkInText_Click(object sender, EventArgs e)
