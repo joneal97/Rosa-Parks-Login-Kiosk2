@@ -91,8 +91,9 @@ namespace Rosa_Parks_Login_Kiosk2
 				}
 				
 			}
-                this.Close();
+                
             }
+            this.Close();
         }
 
         private void checkInText_Click(object sender, EventArgs e)
