@@ -17,6 +17,7 @@ namespace Rosa_Parks_Login_Kiosk2
     public partial class Form1 : Form
 	{
         private int countUp = 0;
+        private bool newDayReset = false;
         public static LinkedList<String> loggedInList; //See http://tinyurl.com/joneal102b
         public static LinkedList<String> loggedOutList; //See http://tinyurl.com/joneal102b
         public Form1()
@@ -36,8 +37,13 @@ namespace Rosa_Parks_Login_Kiosk2
             //See http://tinyurl.com/joneal106b
             var parameterDate = DateTime.ParseExact("02/28/2025", "MM/dd/yyyy", CultureInfo.InvariantCulture);
             var todaysDate = DateTime.Today;
-            if (todaysDate.Hour == 3 && todaysDate.Minute == 0 && todaysDate.Second == 0)
+            if (todaysDate.Hour == 2)
             {
+                newDayReset = true;
+            }
+                if (todaysDate.Hour == 3 && todaysDate.Minute == 0 && newDayReset == true)
+            {
+                newDayReset = false;
                 countUp++;
                 testRemoveJONeal.Text = countUp.ToString();
                 PrintDocument printDoc = new PrintDocument();

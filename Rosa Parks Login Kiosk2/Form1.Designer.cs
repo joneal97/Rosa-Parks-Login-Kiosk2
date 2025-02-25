@@ -113,19 +113,18 @@
             this.testRemoveJONeal.AutoSize = true;
             this.testRemoveJONeal.Location = new System.Drawing.Point(1117, 767);
             this.testRemoveJONeal.Name = "testRemoveJONeal";
-            this.testRemoveJONeal.Size = new System.Drawing.Size(125, 20);
+            this.testRemoveJONeal.Size = new System.Drawing.Size(105, 20);
             this.testRemoveJONeal.TabIndex = 9;
-            this.testRemoveJONeal.Text = "Goes up at 3AM";
+            this.testRemoveJONeal.Text = "Day\'s running";
             // 
             // updateBox
             // 
             this.updateBox.AutoSize = true;
             this.updateBox.Location = new System.Drawing.Point(18, 767);
             this.updateBox.Name = "updateBox";
-            this.updateBox.Size = new System.Drawing.Size(650, 20);
+            this.updateBox.Size = new System.Drawing.Size(560, 20);
             this.updateBox.TabIndex = 8;
-            this.updateBox.Text = "Update 2/20/2025: Improved login-logout functionality and adding report printing " +
-    "to the app.";
+            this.updateBox.Text = "Update 2/24/2025: Resolved issue with logged-out users not clearing next day.";
             // 
             // logEveryoneOut
             // 
