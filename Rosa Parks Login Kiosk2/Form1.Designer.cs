@@ -106,7 +106,7 @@
             // 
             this.serviceMode.Location = new System.Drawing.Point(429, 725);
             this.serviceMode.Name = "serviceMode";
-            this.serviceMode.Size = new System.Drawing.Size(113, 33);
+            this.serviceMode.Size = new System.Drawing.Size(178, 33);
             this.serviceMode.TabIndex = 12;
             this.serviceMode.Text = "Service Mode";
             this.serviceMode.UseVisualStyleBackColor = true;
@@ -119,9 +119,10 @@
             this.pleaseWait.ForeColor = System.Drawing.Color.Red;
             this.pleaseWait.Location = new System.Drawing.Point(252, 343);
             this.pleaseWait.Name = "pleaseWait";
-            this.pleaseWait.Size = new System.Drawing.Size(709, 37);
+            this.pleaseWait.Size = new System.Drawing.Size(709, 74);
             this.pleaseWait.TabIndex = 11;
-            this.pleaseWait.Text = "Please wait 5min or contact Jeremiah O\'Neal.";
+            this.pleaseWait.Text = "Please wait 5min or contact Jeremiah O\'Neal.\r\nPress Service to remove this messag" +
+    "e.";
             // 
             // printLoggedInUsers
             // 
@@ -147,9 +148,10 @@
             this.updateBox.AutoSize = true;
             this.updateBox.Location = new System.Drawing.Point(18, 767);
             this.updateBox.Name = "updateBox";
-            this.updateBox.Size = new System.Drawing.Size(560, 20);
+            this.updateBox.Size = new System.Drawing.Size(755, 40);
             this.updateBox.TabIndex = 8;
-            this.updateBox.Text = "Update 2/27/2025: Resolved issue with logged-out users not clearing next day.";
+            this.updateBox.Text = "Update 2/26/2025: Resolved issue with logged-out users not clearing next day. Cor" +
+    "rected printing problem.\r\n-";
             // 
             // logEveryoneOut
             // 

@@ -39,7 +39,7 @@ namespace Rosa_Parks_Login_Kiosk2
             //See http://tinyurl.com/joneal106b
             var parameterDate = DateTime.ParseExact("03/17/2025", "MM/dd/yyyy", CultureInfo.InvariantCulture);
             var todaysDate = DateTime.Now;
-            updateBox.Text = todaysDate.Hour.ToString();
+            //updateBox.Text = todaysDate.Hour.ToString();
             if (todaysDate.Hour == 2)
             {
                 newDayReset = true;
