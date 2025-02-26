@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Printing;
 
+
 namespace Rosa_Parks_Login_Kiosk2
 {
 
@@ -33,10 +34,12 @@ namespace Rosa_Parks_Login_Kiosk2
             this.WindowState = FormWindowState.Maximized;
             this.FormBorderStyle = FormBorderStyle.None;
             this.TopMost = true;
+            pleaseWait.Visible = false;
             
             //See http://tinyurl.com/joneal106b
-            var parameterDate = DateTime.ParseExact("02/28/2025", "MM/dd/yyyy", CultureInfo.InvariantCulture);
-            var todaysDate = DateTime.Today;
+            var parameterDate = DateTime.ParseExact("03/17/2025", "MM/dd/yyyy", CultureInfo.InvariantCulture);
+            var todaysDate = DateTime.Now;
+            updateBox.Text = todaysDate.Hour.ToString();
             if (todaysDate.Hour == 2)
             {
                 newDayReset = true;
@@ -46,38 +49,45 @@ namespace Rosa_Parks_Login_Kiosk2
                 newDayReset = false;
                 countUp++;
                 testRemoveJONeal.Text = countUp.ToString();
-                PrintDocument printDoc = new PrintDocument();
+                // 2/26/2025 9:37AM.
 
-                // Set the printer name to the installed printer you want to use
+
+
+                PrintDocument printDoc = new PrintDocument();
                 printDoc.PrinterSettings.PrinterName = "0230A-TechHall-HP2055";
 
-                // Check if the specified printer exists
+                List<string> allUsers = new List<string>();
+                allUsers.AddRange(loggedInList);
+                allUsers.AddRange(loggedOutList);
+
+                int linesPerPage = 50;
+                int currentLine = 0;
+
                 if (printDoc.PrinterSettings.IsValid)
                 {
-                    // Handle the PrintPage event
                     printDoc.PrintPage += (jonealfebsender, jonealfe) =>
                     {
-                        // Starting position for the printed text
-                        float yPos = 100; // Starting position on the page
+                        float yPos = 100;
                         float leftMargin = jonealfe.MarginBounds.Left;
                         Font printFont = new Font("Arial", 12);
+                        int linesPrinted = 0;
 
-                        // Loop through the logged-in users and print them
-                        foreach (string user in loggedInList)
+                        while (currentLine < allUsers.Count && linesPrinted < linesPerPage)
                         {
-                            jonealfe.Graphics.DrawString(user, printFont, Brushes.Black, leftMargin, yPos);
-                            yPos += printFont.GetHeight(jonealfe.Graphics); // Move to the next line
+                            jonealfe.Graphics.DrawString(allUsers[currentLine], printFont, Brushes.Black, leftMargin, yPos);
+                            yPos += printFont.GetHeight(jonealfe.Graphics);
+                            currentLine++;
+                            linesPrinted++;
                         }
-                        foreach (string userLoggedOut in loggedOutList)
-                        {
-                            jonealfe.Graphics.DrawString(userLoggedOut, printFont, Brushes.Black, leftMargin, yPos);
-                            yPos += printFont.GetHeight(jonealfe.Graphics); // Move to the next line
-                        }
+
+                        // Check if there are more lines to print
+                        jonealfe.HasMorePages = currentLine < allUsers.Count;
                     };
 
-                    // Print the document
                     printDoc.Print();
-                    string filePath = @"C:\Temp\users.txt";
+         
+        // 2/26/2025 9:36AM.
+        string filePath = @"C:\Temp\users.txt";
 
                     using (StreamWriter writer = new StreamWriter(filePath, true)) // Append mode
                     {
@@ -95,6 +105,7 @@ namespace Rosa_Parks_Login_Kiosk2
                 {
                     updateBox.Hide();
                     logEveryoneOut.Hide();
+                    serviceMode.Hide();
 
                 }
                 //See http://tinyurl.com/joneal101a
@@ -177,9 +188,9 @@ namespace Rosa_Parks_Login_Kiosk2
 
         private void printLoggedInUsers_Click(object sender, EventArgs e)
         {
-
+            pleaseWait.Visible = false;
             //private void printReport_Click(object sender, EventArgs e)
-        //{
+            //{
             DialogResult result = MessageBox.Show(
            "Are you sure you want to print this report?",
            "Confirm Print",
@@ -195,51 +206,71 @@ namespace Rosa_Parks_Login_Kiosk2
                 //  writer.WriteLine($"Did not sign out: {user}");
                 //}
                 // Create a PrintDocument object
-                PrintDocument printDoc = new PrintDocument();
+                pleaseWait.Visible = true;
 
-                // Set the printer name to the installed printer you want to use
+
+                PrintDocument printDoc = new PrintDocument();
                 printDoc.PrinterSettings.PrinterName = "0230A-TechHall-HP2055";
 
-                // Check if the specified printer exists
+                List<string> allUsers = new List<string>();
+                allUsers.AddRange(loggedInList);
+                allUsers.AddRange(loggedOutList);
+
+                int linesPerPage = 50;
+                int currentLine = 0;
+
                 if (printDoc.PrinterSettings.IsValid)
                 {
-                    // Handle the PrintPage event
                     printDoc.PrintPage += (jonealfebsender, jonealfe) =>
                     {
-                        // Starting position for the printed text
-                        float yPos = 100; // Starting position on the page
+                        float yPos = 100;
                         float leftMargin = jonealfe.MarginBounds.Left;
                         Font printFont = new Font("Arial", 12);
+                        int linesPrinted = 0;
 
-                        // Loop through the logged-in users and print them
-                        foreach (string user in loggedInList)
+                        while (currentLine < allUsers.Count && linesPrinted < linesPerPage)
                         {
-                            jonealfe.Graphics.DrawString(user, printFont, Brushes.Black, leftMargin, yPos);
-                            yPos += printFont.GetHeight(jonealfe.Graphics); // Move to the next line
+                            jonealfe.Graphics.DrawString(allUsers[currentLine], printFont, Brushes.Black, leftMargin, yPos);
+                            yPos += printFont.GetHeight(jonealfe.Graphics);
+                            currentLine++;
+                            linesPrinted++;
                         }
-                        foreach (string userLoggedOut in loggedOutList)
-                        {
-                            jonealfe.Graphics.DrawString(userLoggedOut, printFont, Brushes.Black, leftMargin, yPos);
-                            yPos += printFont.GetHeight(jonealfe.Graphics); // Move to the next line
-                        }
+
+                        // Check if there are more lines to print
+                        jonealfe.HasMorePages = currentLine < allUsers.Count;
                     };
 
-                    // Print the document
+                    pleaseWait.Visible = false;
                     printDoc.Print();
-                }
-                else
-                {
-                    //Console.WriteLine("The specified printer is not available.");
-                }
-            }// End of printing section
 
-        
+                    // 2/26/2025 9:50AM
+
+                }
+            }
             else
             {
                 //Console.WriteLine("User selected No. Cancel the printing.");
                 // Add code here to cancel the printing process
             }
 
+        }
+
+        private void serviceMode_Click(object sender, EventArgs e)
+        {
+            if(pleaseWait.Visible == false)
+            {
+                pleaseWait.Visible = true;
+            }
+            else
+            {
+                pleaseWait.Visible = false;
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.ShowDialog();
         }
     }
 }

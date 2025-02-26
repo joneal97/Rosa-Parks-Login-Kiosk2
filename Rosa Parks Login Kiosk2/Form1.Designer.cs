@@ -33,6 +33,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.serviceMode = new System.Windows.Forms.Button();
+            this.pleaseWait = new System.Windows.Forms.Label();
             this.printLoggedInUsers = new System.Windows.Forms.Button();
             this.testRemoveJONeal = new System.Windows.Forms.Label();
             this.updateBox = new System.Windows.Forms.Label();
@@ -59,7 +61,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label1
             // 
@@ -77,6 +79,8 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.serviceMode);
+            this.groupBox1.Controls.Add(this.pleaseWait);
             this.groupBox1.Controls.Add(this.printLoggedInUsers);
             this.groupBox1.Controls.Add(this.testRemoveJONeal);
             this.groupBox1.Controls.Add(this.updateBox);
@@ -97,6 +101,27 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kiosk";
+            // 
+            // serviceMode
+            // 
+            this.serviceMode.Location = new System.Drawing.Point(429, 725);
+            this.serviceMode.Name = "serviceMode";
+            this.serviceMode.Size = new System.Drawing.Size(113, 33);
+            this.serviceMode.TabIndex = 12;
+            this.serviceMode.Text = "Service Mode";
+            this.serviceMode.UseVisualStyleBackColor = true;
+            this.serviceMode.Click += new System.EventHandler(this.serviceMode_Click);
+            // 
+            // pleaseWait
+            // 
+            this.pleaseWait.AutoSize = true;
+            this.pleaseWait.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pleaseWait.ForeColor = System.Drawing.Color.Red;
+            this.pleaseWait.Location = new System.Drawing.Point(252, 343);
+            this.pleaseWait.Name = "pleaseWait";
+            this.pleaseWait.Size = new System.Drawing.Size(709, 37);
+            this.pleaseWait.TabIndex = 11;
+            this.pleaseWait.Text = "Please wait 5min or contact Jeremiah O\'Neal.";
             // 
             // printLoggedInUsers
             // 
@@ -124,7 +149,7 @@
             this.updateBox.Name = "updateBox";
             this.updateBox.Size = new System.Drawing.Size(560, 20);
             this.updateBox.TabIndex = 8;
-            this.updateBox.Text = "Update 2/24/2025: Resolved issue with logged-out users not clearing next day.";
+            this.updateBox.Text = "Update 2/27/2025: Resolved issue with logged-out users not clearing next day.";
             // 
             // logEveryoneOut
             // 
@@ -245,6 +270,8 @@
         private System.Windows.Forms.Label updateBox;
         private System.Windows.Forms.Label testRemoveJONeal;
         private System.Windows.Forms.Button printLoggedInUsers;
+        private System.Windows.Forms.Label pleaseWait;
+        private System.Windows.Forms.Button serviceMode;
     }
 }
 
