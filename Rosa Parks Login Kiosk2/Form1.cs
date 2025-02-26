@@ -271,6 +271,7 @@ namespace Rosa_Parks_Login_Kiosk2
         {
             Form2 f2 = new Form2();
             f2.ShowDialog();
+            loggedinCount.Text = "There are " + Form1.loggedInList.Count + " logged in visitors";
         }
     }
 }
