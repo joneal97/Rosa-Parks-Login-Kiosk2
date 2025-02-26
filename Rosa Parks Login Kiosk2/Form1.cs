@@ -37,86 +37,24 @@ namespace Rosa_Parks_Login_Kiosk2
             pleaseWait.Visible = false;
             
             //See http://tinyurl.com/joneal106b
-            var parameterDate = DateTime.ParseExact("03/17/2025", "MM/dd/yyyy", CultureInfo.InvariantCulture);
+            var parameterDate = DateTime.ParseExact("03/04/2025", "MM/dd/yyyy", CultureInfo.InvariantCulture);
             var todaysDate = DateTime.Now;
-            //updateBox.Text = todaysDate.Hour.ToString();
-            if (todaysDate.Hour == 2)
+            if (parameterDate < todaysDate)
             {
-                newDayReset = true;
-            }
-                if (todaysDate.Hour == 3 && todaysDate.Minute == 0 && newDayReset == true)
-            {
-                newDayReset = false;
-                countUp++;
-                testRemoveJONeal.Text = countUp.ToString();
-                // 2/26/2025 9:37AM.
-
-
-
-                PrintDocument printDoc = new PrintDocument();
-                printDoc.PrinterSettings.PrinterName = "0230A-TechHall-HP2055";
-
-                List<string> allUsers = new List<string>();
-                allUsers.AddRange(loggedInList);
-                allUsers.AddRange(loggedOutList);
-
-                int linesPerPage = 50;
-                int currentLine = 0;
-
-                if (printDoc.PrinterSettings.IsValid)
-                {
-                    printDoc.PrintPage += (jonealfebsender, jonealfe) =>
-                    {
-                        float yPos = 100;
-                        float leftMargin = jonealfe.MarginBounds.Left;
-                        Font printFont = new Font("Arial", 12);
-                        int linesPrinted = 0;
-
-                        while (currentLine < allUsers.Count && linesPrinted < linesPerPage)
-                        {
-                            jonealfe.Graphics.DrawString(allUsers[currentLine], printFont, Brushes.Black, leftMargin, yPos);
-                            yPos += printFont.GetHeight(jonealfe.Graphics);
-                            currentLine++;
-                            linesPrinted++;
-                        }
-
-                        // Check if there are more lines to print
-                        jonealfe.HasMorePages = currentLine < allUsers.Count;
-                    };
-
-                    printDoc.Print();
-         
-        // 2/26/2025 9:36AM.
-        string filePath = @"C:\Temp\users.txt";
-
-                    using (StreamWriter writer = new StreamWriter(filePath, true)) // Append mode
-                    {
-                        foreach (string user in loggedInList)
-                        {
-                            writer.WriteLine($"Did not sign out: {user}");
-                        }
-                    }
-                    loggedInList.Clear();
-                    loggedOutList.Clear();
-
-                }
-
-                if (parameterDate < todaysDate)
-                {
                     updateBox.Hide();
                     logEveryoneOut.Hide();
                     serviceMode.Hide();
 
-                }
-                //See http://tinyurl.com/joneal101a
-                this.Top = 0;
-                this.Left = 0;
+             }
+             //See http://tinyurl.com/joneal101a
+             this.Top = 0;
+             this.Left = 0;
 
-                this.Size = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height - 10);
+             this.Size = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height - 10);
 
 
-            }
-        }
+            
+        }//There should not be a need for a bracket here joneal 2PM 2/26/2025
 		//See http://tinyurl.com/joneal101c
 		private void Form1_FormClosing(object sender, FormClosingEventArgs e)
 		{
@@ -160,10 +98,83 @@ namespace Rosa_Parks_Login_Kiosk2
 			//loggedinCount.Text = "Test";
 		}
 
-		private void timer1_Tick(object sender, EventArgs e)
-		{
-			currentTime.Text = DateTime.Now.ToString("MMMM dd h:mm:ss tt");
-		}
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            currentTime.Text = DateTime.Now.ToString("MMMM dd h:mm:ss tt");
+            var todaysDate = DateTime.Now;
+            if (todaysDate.Hour == 3)
+            {
+                tempNewDay.Text = "-";
+                newDayReset = true;
+                pleaseWait.Visible = false;
+            }
+            if (todaysDate.Hour == 5)
+            {
+                pleaseWait.Visible = false;
+            }
+            if (todaysDate.Hour == 4 && newDayReset == true)
+            {
+                // joneal 2/26/2025 1:38PM
+                if (newDayReset == true)
+                {
+                    pleaseWait.Visible = true;
+                    newDayReset = false;
+                    countUp++;
+                    testRemoveJONeal.Text = countUp.ToString();
+                    // 2/26/2025 9:37AM.
+
+                    PrintDocument printDoc = new PrintDocument();
+                    printDoc.PrinterSettings.PrinterName = "0230A-TechHall-HP2055";
+
+                    List<string> allUsers = new List<string>();
+                    allUsers.AddRange(loggedInList);
+                    allUsers.AddRange(loggedOutList);
+
+                    int linesPerPage = 50;
+                    int currentLine = 0;
+
+                    if (printDoc.PrinterSettings.IsValid)
+                    {
+                        printDoc.PrintPage += (jonealfebsender, jonealfe) =>
+                        {
+                            float yPos = 100;
+                            float leftMargin = jonealfe.MarginBounds.Left;
+                            Font printFont = new Font("Arial", 12);
+                            int linesPrinted = 0;
+
+                            while (currentLine < allUsers.Count && linesPrinted < linesPerPage)
+                            {
+                                jonealfe.Graphics.DrawString(allUsers[currentLine], printFont, Brushes.Black, leftMargin, yPos);
+                                yPos += printFont.GetHeight(jonealfe.Graphics);
+                                currentLine++;
+                                linesPrinted++;
+                            }
+
+                            // Check if there are more lines to print
+                            jonealfe.HasMorePages = currentLine < allUsers.Count;
+                        };
+
+                        printDoc.Print();
+
+                        // 2/26/2025 9:36AM.
+                        string filePath = @"C:\Temp\users.txt";
+
+                        using (StreamWriter writer = new StreamWriter(filePath, true)) // Append mode
+                        {
+                            foreach (string user in loggedInList)
+                            {
+                                writer.WriteLine($"Did not sign out: {user}");
+                            }
+                        }
+                        loggedInList.Clear();
+                        loggedOutList.Clear();
+
+                    }
+
+                }
+
+            }
+        }
 
         private void button4_Click_1(object sender, EventArgs e)
         {

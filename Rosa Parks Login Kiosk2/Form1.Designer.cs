@@ -46,6 +46,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.tempNewDay = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -79,6 +80,7 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.tempNewDay);
             this.groupBox1.Controls.Add(this.serviceMode);
             this.groupBox1.Controls.Add(this.pleaseWait);
             this.groupBox1.Controls.Add(this.printLoggedInUsers);
@@ -237,6 +239,15 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // tempNewDay
+            // 
+            this.tempNewDay.AutoSize = true;
+            this.tempNewDay.Location = new System.Drawing.Point(1096, 767);
+            this.tempNewDay.Name = "tempNewDay";
+            this.tempNewDay.Size = new System.Drawing.Size(15, 20);
+            this.tempNewDay.TabIndex = 13;
+            this.tempNewDay.Text = "*";
+            // 
             // Form1
             // 
             this.AcceptButton = this.button1;
@@ -274,6 +285,7 @@
         private System.Windows.Forms.Button printLoggedInUsers;
         private System.Windows.Forms.Label pleaseWait;
         private System.Windows.Forms.Button serviceMode;
+        private System.Windows.Forms.Label tempNewDay;
     }
 }
 
