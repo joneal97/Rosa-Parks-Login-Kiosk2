@@ -42,8 +42,8 @@ namespace Rosa_Parks_Login_Kiosk2
             if (parameterDate < todaysDate)
             {
                     updateBox.Hide();
-                    logEveryoneOut.Hide();
-                    serviceMode.Hide();
+                    //logEveryoneOut.Hide();
+                    //serviceMode.Hide();
 
              }
              //See http://tinyurl.com/joneal101a
@@ -104,7 +104,7 @@ namespace Rosa_Parks_Login_Kiosk2
             var todaysDate = DateTime.Now;
             if (todaysDate.Hour == 3) //3
             {
-                tempNewDay.Text = ((char)('A' + new Random().Next(0, 26))).ToString(); ;
+                //tempNewDay.Text = ((char)('A' + new Random().Next(0, 26))).ToString(); ;
                 newDayReset = true;
                 pleaseWait.Visible = false;
             }
@@ -120,7 +120,7 @@ namespace Rosa_Parks_Login_Kiosk2
                     pleaseWait.Visible = true;
                     newDayReset = false;
                     countUp++;
-                    testRemoveJONeal.Text = countUp.ToString();
+                    //testRemoveJONeal.Text = countUp.ToString();
                     // 2/26/2025 9:37AM.
 
                     PrintDocument printDoc = new PrintDocument();
