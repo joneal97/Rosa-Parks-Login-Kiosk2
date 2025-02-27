@@ -139,21 +139,21 @@
             // testRemoveJONeal
             // 
             this.testRemoveJONeal.AutoSize = true;
-            this.testRemoveJONeal.Location = new System.Drawing.Point(1117, 767);
+            this.testRemoveJONeal.Location = new System.Drawing.Point(1238, 758);
             this.testRemoveJONeal.Name = "testRemoveJONeal";
-            this.testRemoveJONeal.Size = new System.Drawing.Size(105, 20);
+            this.testRemoveJONeal.Size = new System.Drawing.Size(18, 20);
             this.testRemoveJONeal.TabIndex = 9;
-            this.testRemoveJONeal.Text = "Day\'s running";
+            this.testRemoveJONeal.Text = "0";
             // 
             // updateBox
             // 
             this.updateBox.AutoSize = true;
             this.updateBox.Location = new System.Drawing.Point(18, 767);
             this.updateBox.Name = "updateBox";
-            this.updateBox.Size = new System.Drawing.Size(755, 40);
+            this.updateBox.Size = new System.Drawing.Size(721, 60);
             this.updateBox.TabIndex = 8;
-            this.updateBox.Text = "Update 2/26/2025: Resolved issue with logged-out users not clearing next day. Cor" +
-    "rected printing problem.\r\n-";
+            this.updateBox.Text = "Update 2/27/2025: Resolved issue with logged-out users not clearing next day by m" +
+    "oving code to \'tick\'\r\n. Corrected printing problem..\r\n-";
             // 
             // logEveryoneOut
             // 
@@ -242,7 +242,7 @@
             // tempNewDay
             // 
             this.tempNewDay.AutoSize = true;
-            this.tempNewDay.Location = new System.Drawing.Point(1096, 767);
+            this.tempNewDay.Location = new System.Drawing.Point(1262, 758);
             this.tempNewDay.Name = "tempNewDay";
             this.tempNewDay.Size = new System.Drawing.Size(15, 20);
             this.tempNewDay.TabIndex = 13;

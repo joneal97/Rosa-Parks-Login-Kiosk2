@@ -102,17 +102,17 @@ namespace Rosa_Parks_Login_Kiosk2
         {
             currentTime.Text = DateTime.Now.ToString("MMMM dd h:mm:ss tt");
             var todaysDate = DateTime.Now;
-            if (todaysDate.Hour == 3)
+            if (todaysDate.Hour == 3) //3
             {
-                tempNewDay.Text = "-";
+                tempNewDay.Text = ((char)('A' + new Random().Next(0, 26))).ToString(); ;
                 newDayReset = true;
                 pleaseWait.Visible = false;
             }
-            if (todaysDate.Hour == 5)
+            if (todaysDate.Hour == 5) //5
             {
                 pleaseWait.Visible = false;
             }
-            if (todaysDate.Hour == 4 && newDayReset == true)
+            if (todaysDate.Hour == 4 && newDayReset == true) //4
             {
                 // joneal 2/26/2025 1:38PM
                 if (newDayReset == true)
