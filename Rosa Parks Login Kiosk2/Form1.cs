@@ -121,7 +121,7 @@ namespace Rosa_Parks_Login_Kiosk2
                     newDayReset = false;
                     countUp++;
                     //testRemoveJONeal.Text = countUp.ToString();
-                    // 2/26/2025 9:37AM.
+                    // 2/26/2025 9:37AM. mar3
 
                     PrintDocument printDoc = new PrintDocument();
                     printDoc.PrinterSettings.PrinterName = "0230A-TechHall-HP2055";
