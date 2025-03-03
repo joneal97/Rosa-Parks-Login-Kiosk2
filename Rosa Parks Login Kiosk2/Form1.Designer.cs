@@ -110,7 +110,7 @@
             // 
             // printLoggedInUsers
             // 
-            this.printLoggedInUsers.Location = new System.Drawing.Point(7, 725);
+            this.printLoggedInUsers.Location = new System.Drawing.Point(7, 714);
             this.printLoggedInUsers.Name = "printLoggedInUsers";
             this.printLoggedInUsers.Size = new System.Drawing.Size(189, 30);
             this.printLoggedInUsers.TabIndex = 10;
