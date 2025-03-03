@@ -33,10 +33,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pleaseWait = new System.Windows.Forms.Label();
             this.printLoggedInUsers = new System.Windows.Forms.Button();
-            this.testRemoveJONeal = new System.Windows.Forms.Label();
             this.updateBox = new System.Windows.Forms.Label();
-            this.logEveryoneOut = new System.Windows.Forms.Button();
             this.currentTime = new System.Windows.Forms.Label();
             this.aboutButton = new System.Windows.Forms.Button();
             this.loggedinCount = new System.Windows.Forms.Label();
@@ -59,7 +58,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label1
             // 
@@ -77,10 +76,9 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.pleaseWait);
             this.groupBox1.Controls.Add(this.printLoggedInUsers);
-            this.groupBox1.Controls.Add(this.testRemoveJONeal);
             this.groupBox1.Controls.Add(this.updateBox);
-            this.groupBox1.Controls.Add(this.logEveryoneOut);
             this.groupBox1.Controls.Add(this.currentTime);
             this.groupBox1.Controls.Add(this.aboutButton);
             this.groupBox1.Controls.Add(this.loggedinCount);
@@ -98,6 +96,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kiosk";
             // 
+            // pleaseWait
+            // 
+            this.pleaseWait.AutoSize = true;
+            this.pleaseWait.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pleaseWait.ForeColor = System.Drawing.Color.Red;
+            this.pleaseWait.Location = new System.Drawing.Point(252, 343);
+            this.pleaseWait.Name = "pleaseWait";
+            this.pleaseWait.Size = new System.Drawing.Size(709, 74);
+            this.pleaseWait.TabIndex = 11;
+            this.pleaseWait.Text = "Please wait 5min or contact Jeremiah O\'Neal.\r\nPress Service to remove this messag" +
+    "e.";
+            // 
             // printLoggedInUsers
             // 
             this.printLoggedInUsers.Location = new System.Drawing.Point(7, 725);
@@ -108,35 +118,15 @@
             this.printLoggedInUsers.UseVisualStyleBackColor = true;
             this.printLoggedInUsers.Click += new System.EventHandler(this.printLoggedInUsers_Click);
             // 
-            // testRemoveJONeal
-            // 
-            this.testRemoveJONeal.AutoSize = true;
-            this.testRemoveJONeal.Location = new System.Drawing.Point(1117, 767);
-            this.testRemoveJONeal.Name = "testRemoveJONeal";
-            this.testRemoveJONeal.Size = new System.Drawing.Size(125, 20);
-            this.testRemoveJONeal.TabIndex = 9;
-            this.testRemoveJONeal.Text = "Goes up at 3AM";
-            // 
             // updateBox
             // 
             this.updateBox.AutoSize = true;
             this.updateBox.Location = new System.Drawing.Point(18, 767);
             this.updateBox.Name = "updateBox";
-            this.updateBox.Size = new System.Drawing.Size(650, 20);
+            this.updateBox.Size = new System.Drawing.Size(843, 20);
             this.updateBox.TabIndex = 8;
-            this.updateBox.Text = "Update 2/20/2025: Improved login-logout functionality and adding report printing " +
-    "to the app.";
-            // 
-            // logEveryoneOut
-            // 
-            this.logEveryoneOut.Location = new System.Drawing.Point(203, 723);
-            this.logEveryoneOut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.logEveryoneOut.Name = "logEveryoneOut";
-            this.logEveryoneOut.Size = new System.Drawing.Size(219, 35);
-            this.logEveryoneOut.TabIndex = 7;
-            this.logEveryoneOut.Text = "Manually log everyone out";
-            this.logEveryoneOut.UseVisualStyleBackColor = true;
-            this.logEveryoneOut.Click += new System.EventHandler(this.button4_Click_2);
+            this.updateBox.Text = "Update 2/27/2025: Logged in users are now logged out next day. Print logged in us" +
+    "ers prints to NST printer in his office.";
             // 
             // currentTime
             // 
@@ -242,10 +232,9 @@
 		private System.Windows.Forms.Button aboutButton;
 		private System.Windows.Forms.Timer timer1;
 		private System.Windows.Forms.Label currentTime;
-        private System.Windows.Forms.Button logEveryoneOut;
         private System.Windows.Forms.Label updateBox;
-        private System.Windows.Forms.Label testRemoveJONeal;
         private System.Windows.Forms.Button printLoggedInUsers;
+        private System.Windows.Forms.Label pleaseWait;
     }
 }
 

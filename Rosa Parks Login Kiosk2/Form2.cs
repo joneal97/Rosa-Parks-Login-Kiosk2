@@ -32,6 +32,7 @@ namespace Rosa_Parks_Login_Kiosk2
 
 		private void button1_Click(object sender, EventArgs e)
 		{
+			
 			if(!parentsName.Text.Contains(" "))
 
                 {
