@@ -123,10 +123,10 @@
             this.updateBox.AutoSize = true;
             this.updateBox.Location = new System.Drawing.Point(18, 767);
             this.updateBox.Name = "updateBox";
-            this.updateBox.Size = new System.Drawing.Size(843, 20);
+            this.updateBox.Size = new System.Drawing.Size(834, 20);
             this.updateBox.TabIndex = 8;
-            this.updateBox.Text = "Update 2/27/2025: Logged in users are now logged out next day. Print logged in us" +
-    "ers prints to NST printer in his office.";
+            this.updateBox.Text = "Update 3/3/2025: Logged in users are now logged out next day. Print logged in use" +
+    "rs prints to NST printer in his office.";
             // 
             // currentTime
             // 
