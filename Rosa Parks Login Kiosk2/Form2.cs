@@ -51,7 +51,7 @@ namespace Rosa_Parks_Login_Kiosk2
             }
             if (roomName.TextLength <= 0)
             {
-                parentsName.Text = "Main Office";
+                roomName.Text = "Main Office";
             }
             //;
             string textspacing = " ";
